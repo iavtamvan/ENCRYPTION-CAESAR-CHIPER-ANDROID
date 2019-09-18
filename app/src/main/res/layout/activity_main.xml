@@ -1,111 +1,169 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#4A9586"
     android:orientation="vertical"
-    android:padding="10dp"
+    android:scrollbarAlwaysDrawVerticalTrack="true"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/icon_palin_text"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_alignTop="@id/edt_plain"
-        android:layout_alignBottom="@id/edt_plain"
-        android:src="@drawable/plain_text" />
-
-    <EditText
-        android:id="@+id/edt_plain"
-        android:layout_width="match_parent"
+    <RelativeLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_toRightOf="@id/icon_palin_text"
-        android:hint="Plain Text"
-        android:textSize="12sp" />
+        android:layout_below="@+id/login_title"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="70dp"
+        android:background="#fff"
+        android:elevation="4dp"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:id="@+id/relativeLayout">
 
-    <ImageView
-        android:id="@+id/icon_encrypt"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_below="@id/edt_plain"
-        android:layout_alignTop="@id/edt_encrypt"
-        android:layout_alignBottom="@id/edt_encrypt"
-        android:src="@drawable/encrpyt" />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="30dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:orientation="vertical"
+                android:padding="10dp">
 
-    <EditText
-        android:id="@+id/edt_encrypt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/edt_plain"
-        android:layout_marginLeft="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_toRightOf="@id/icon_encrypt"
-        android:hint="Encrypt"
-        android:textSize="12sp" />
+                <ImageView
+                    android:id="@+id/icon_palin_text"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignTop="@id/edt_plain"
+                    android:layout_alignBottom="@id/edt_plain"
+                    android:src="@drawable/plain_text" />
+
+                <EditText
+                    android:id="@+id/edt_plain"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toRightOf="@id/icon_palin_text"
+                    android:hint="Plain Text"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:id="@+id/icon_encrypt"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_below="@id/edt_plain"
+                    android:layout_alignTop="@id/edt_encrypt"
+                    android:layout_alignBottom="@id/edt_encrypt"
+                    android:src="@drawable/encrypt_2" />
+
+                <EditText
+                    android:id="@+id/edt_encrypt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/edt_plain"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toRightOf="@id/icon_encrypt"
+                    android:hint="Encrypt"
+                    android:textSize="12sp" />
+                <TextView
+                    android:id="@+id/tv_text_key"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/edt_encrypt"
+                    android:text="Key"
+                    android:textColor="#3e4042"
+                    android:textAlignment="center"
+                    />
+                <View
+                    android:id="@+id/v_key"
+                    android:layout_width="match_parent"
+                    android:visibility="visible"
+                    android:layout_height="2dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_below="@id/tv_text_key"
+                    android:background="#8a8e94"/>
+
+                <ImageView
+                    android:id="@+id/icon_minus"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_below="@id/v_key"
+                    android:layout_alignParentLeft="true"
+                    android:src="@drawable/ic_minus" />
+
+                <ImageView
+                    android:id="@+id/icon_plus"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_below="@id/v_key"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_plus"/>
+
+                <EditText
+                    android:id="@+id/edt_key"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/v_key"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:layout_toLeftOf="@id/icon_plus"
+                    android:layout_toRightOf="@id/icon_minus"
+                    android:hint="Key"
+                    android:textSize="12sp" />
+                <Switch
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="Default encrypt"
+                    android:layout_below="@id/edt_key"
+                    android:id="@+id/sw"/>
+
+                <Button
+                    android:id="@+id/btn_submit"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="22dp"
+                    android:background="#d67601"
+                    android:text="KONVERSI"
+                    android:layout_below="@+id/sw"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/user_profile_photo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/login_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/background_layer"
+        android:elevation="4dp"
+        android:src="@drawable/icon_konversi" />
+
     <TextView
-        android:id="@+id/tv_text_key"
-        android:layout_width="match_parent"
+        android:id="@+id/login_title"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/edt_encrypt"
-        android:text="Key"
-        android:textColor="#3e4042"
-        android:textAlignment="center"
-        />
-    <View
-        android:id="@+id/v_key"
-        android:layout_width="match_parent"
-        android:visibility="visible"
-        android:layout_height="2dp"
-        android:layout_marginBottom="10dp"
-        android:layout_below="@id/tv_text_key"
-        android:background="#8a8e94"/>
-
-    <ImageView
-        android:id="@+id/icon_minus"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_below="@id/v_key"
-        android:layout_alignParentLeft="true"
-        android:src="@drawable/ic_minus" />
-
-    <ImageView
-        android:id="@+id/icon_plus"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_below="@id/v_key"
-        android:layout_alignParentRight="true"
-        android:src="@drawable/ic_plus"/>
-
-    <EditText
-        android:id="@+id/edt_key"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/v_key"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp"
-        android:gravity="center"
-        android:layout_toLeftOf="@id/icon_plus"
-        android:layout_toRightOf="@id/icon_minus"
-        android:hint="Key"
-        android:textSize="12sp" />
-    <Switch
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:text="Default encrypt"
-        android:layout_below="@id/edt_key"
-        android:id="@+id/sw"/>
-
-    <Button
-        android:id="@+id/btn_submit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_below="@id/sw"
-        android:text="KONVERSI" />
+        android:layout_marginTop="26dp"
+        android:gravity="center_horizontal"
+        android:text="ENCRYPTION CAESAR CHIPER"
+        android:textColor="#fff"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
