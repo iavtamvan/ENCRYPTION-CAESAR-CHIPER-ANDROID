@@ -1,42 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
     android:orientation="vertical"
+    android:padding="10dp"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/icon_palin_text"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignTop="@id/edt_plain"
+        android:layout_alignBottom="@id/edt_plain"
+        android:src="@drawable/plain_text" />
+
     <EditText
+        android:id="@+id/edt_plain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_toRightOf="@id/icon_palin_text"
         android:hint="Plain Text"
-        android:id="@+id/edt_plain"/>
+        android:textSize="12sp" />
+
+    <ImageView
+        android:id="@+id/icon_encrypt"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_below="@id/edt_plain"
+        android:layout_alignTop="@id/edt_encrypt"
+        android:layout_alignBottom="@id/edt_encrypt"
+        android:src="@drawable/encrpyt" />
+
     <EditText
+        android:id="@+id/edt_encrypt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/edt_plain"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_toRightOf="@id/icon_encrypt"
         android:hint="Encrypt"
-        android:id="@+id/edt_encrypt"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Key"
-        android:id="@+id/edt_key"/>
-
+        android:textSize="12sp" />
     <TextView
+        android:id="@+id/tv_text_key"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tv_hasil"
-        android:textSize="30dp"/>
+        android:layout_below="@id/edt_encrypt"
+        android:text="Key"
+        android:textColor="#3e4042"
+        android:textAlignment="center"
+        />
+    <View
+        android:id="@+id/v_key"
+        android:layout_width="match_parent"
+        android:visibility="visible"
+        android:layout_height="2dp"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@id/tv_text_key"
+        android:background="#8a8e94"/>
 
+    <ImageView
+        android:id="@+id/icon_minus"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_below="@id/v_key"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/ic_minus" />
+
+    <ImageView
+        android:id="@+id/icon_plus"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_below="@id/v_key"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ic_plus"/>
+
+    <EditText
+        android:id="@+id/edt_key"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/v_key"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:layout_toLeftOf="@id/icon_plus"
+        android:layout_toRightOf="@id/icon_minus"
+        android:hint="Key"
+        android:textSize="12sp" />
     <Switch
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
         android:text="Default encrypt"
+        android:layout_below="@id/edt_key"
         android:id="@+id/sw"/>
 
     <Button
+        android:id="@+id/btn_submit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btn_submit"/>
-</LinearLayout>
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/sw"
+        android:text="KONVERSI" />
+
+</RelativeLayout>
