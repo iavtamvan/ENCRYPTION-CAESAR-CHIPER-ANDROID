@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             key = Integer.parseInt(edtKey.getText().toString());
             if (key==0){
-                Toast.makeText(this, "Barang tidak bisa kurang dari 0", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Key tidak bisa kurang dari 0", Toast.LENGTH_SHORT).show();
             }else {
                 key = key- 1;
                 edtKey.setText(""+key);
