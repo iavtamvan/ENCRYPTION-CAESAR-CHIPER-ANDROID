@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:background="#4A9586"
     android:orientation="vertical"
     android:scrollbarAlwaysDrawVerticalTrack="true"
     tools:context=".MainActivity">
 
     <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/login_title"
         android:layout_marginLeft="30dp"
+        android:layout_marginTop="71dp"
         android:layout_marginRight="30dp"
-        android:layout_marginTop="70dp"
         android:background="#fff"
         android:elevation="4dp"
         android:orientation="vertical"
-        android:padding="20dp"
-        android:id="@+id/relativeLayout">
+        android:padding="20dp">
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingTop="30dp">
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -38,62 +38,70 @@
                     android:id="@+id/icon_palin_text"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:layout_alignTop="@id/edt_plain"
-                    android:layout_alignBottom="@id/edt_plain"
+                    android:layout_alignTop="@id/inputLay_plain"
+                    android:layout_alignBottom="@id/inputLay_plain"
                     android:src="@drawable/plain_text" />
 
-                <EditText
-                    android:id="@+id/edt_plain"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputLay_plain"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_toRightOf="@id/icon_palin_text"
-                    android:hint="Plain Text"
-                    android:textSize="12sp" />
+                    android:layout_marginLeft="-8dp"
+                    android:layout_toRightOf="@id/icon_palin_text">
+
+                    <EditText
+                        android:id="@+id/edt_plain"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:hint="Plain Text"
+                        android:textSize="12sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <ImageView
                     android:id="@+id/icon_encrypt"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:layout_below="@id/edt_plain"
-                    android:layout_alignTop="@id/edt_encrypt"
-                    android:layout_alignBottom="@id/edt_encrypt"
+                    android:layout_below="@id/inputLay_plain"
+                    android:layout_alignTop="@id/inputLay_plain_2"
+                    android:layout_alignBottom="@id/inputLay_plain_2"
                     android:src="@drawable/encrypt_2" />
 
-                <EditText
-                    android:id="@+id/edt_encrypt"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputLay_plain_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/edt_plain"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_toRightOf="@id/icon_encrypt"
-                    android:hint="Encrypt"
-                    android:textSize="12sp" />
-                <TextView
-                    android:id="@+id/tv_text_key"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/edt_encrypt"
-                    android:text="Key"
-                    android:textColor="#3e4042"
-                    android:textAlignment="center"
-                    />
-                <View
-                    android:id="@+id/v_key"
-                    android:layout_width="match_parent"
-                    android:visibility="visible"
-                    android:layout_height="2dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_below="@id/tv_text_key"
-                    android:background="#8a8e94"/>
+                    android:layout_marginLeft="-8dp"
+                    android:layout_below="@+id/inputLay_plain"
+                    android:layout_toRightOf="@id/icon_encrypt">
+
+                    <EditText
+                        android:id="@+id/edt_encrypt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:hint="Encrypt"
+                        android:textSize="12sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <ImageView
+                    android:id="@+id/icon_ver_key"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_below="@id/inputLay_plain_2"
+                    android:layout_centerInParent="true"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/icon_ver_key" />
 
                 <ImageView
                     android:id="@+id/icon_minus"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:layout_below="@id/v_key"
+                    android:layout_below="@id/icon_ver_key"
                     android:layout_alignParentLeft="true"
                     android:src="@drawable/ic_minus" />
 
@@ -101,39 +109,40 @@
                     android:id="@+id/icon_plus"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:layout_below="@id/v_key"
+                    android:layout_below="@id/icon_ver_key"
                     android:layout_alignParentRight="true"
-                    android:src="@drawable/ic_plus"/>
+                    android:src="@drawable/ic_plus" />
 
                 <EditText
                     android:id="@+id/edt_key"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/v_key"
+                    android:layout_below="@id/icon_ver_key"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="10dp"
-                    android:gravity="center"
                     android:layout_toLeftOf="@id/icon_plus"
                     android:layout_toRightOf="@id/icon_minus"
+                    android:gravity="center"
                     android:hint="Key"
                     android:textSize="12sp" />
+
                 <Switch
+                    android:id="@+id/sw"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:text="Default encrypt"
                     android:layout_below="@id/edt_key"
-                    android:id="@+id/sw"/>
+                    android:layout_marginLeft="10dp"
+                    android:text="Default encrypt" />
 
                 <Button
                     android:id="@+id/btn_submit"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
+                    android:layout_below="@+id/sw"
                     android:layout_margin="22dp"
                     android:background="#d67601"
                     android:text="KONVERSI"
-                    android:layout_below="@+id/sw"
                     android:textAllCaps="false"
                     android:textColor="#fff"
                     android:textSize="18sp" />
@@ -157,13 +166,13 @@
         android:id="@+id/login_title"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_marginTop="26dp"
         android:gravity="center_horizontal"
         android:text="ENCRYPTION CAESAR CHIPER"
         android:textColor="#fff"
         android:textSize="23sp"
-        android:textStyle="bold"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:textStyle="bold" />
 
 </RelativeLayout>

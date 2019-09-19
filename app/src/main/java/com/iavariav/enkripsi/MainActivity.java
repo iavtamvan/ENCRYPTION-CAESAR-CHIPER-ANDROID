@@ -17,13 +17,13 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText edtPlain;
     private EditText edtEncrypt;
-//    private TextView tvHasil;
+    //    private TextView tvHasil;
     private Button btnSubmit;
     private ImageView ivPlus;
     private ImageView ivMinus;
 
-    String newString, inputString;
-//    int key;
+    String newString, inputString, text;
+    //    int key;
     private EditText edtKey;
     private Switch sw;
     private int key = 0;
@@ -34,14 +34,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initView();
 
-        edtKey.setText(""+key);
+        edtKey.setText("" + key);
         ivPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (edtKey.getText().toString().isEmpty()){
+                if (edtKey.getText().toString().isEmpty()) {
                     resetKey();
                     tambahKey();
-                }else {
+                } else {
                     tambahKey();
                 }
             }
@@ -49,14 +49,19 @@ public class MainActivity extends AppCompatActivity {
         ivMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (edtKey.getText().toString().isEmpty()){
+                if (edtKey.getText().toString().isEmpty()) {
                     resetKey();
                     kurangKey();
-                }else {
+                } else {
                     kurangKey();
                 }
             }
         });
+
+        if (sw.isChecked()) {
+            if(edtPlain.getText().toString().isEmpty()){
+            }
+        }
 
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,30 +74,33 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
     private void resetKey() {
         key = 0;
-        edtKey.setText(""+key);
+        edtKey.setText("" + key);
     }
+
     private void tambahKey() {
         try {
             key = Integer.parseInt(edtKey.getText().toString());
             key = key + 1;
-            edtKey.setText(""+key);
-        }catch (NumberFormatException nfe){
+            edtKey.setText("" + key);
+        } catch (NumberFormatException nfe) {
             resetKey();
             tambahKey();
         }
     }
+
     private void kurangKey() {
         try {
             key = Integer.parseInt(edtKey.getText().toString());
-            if (key==0){
+            if (key == 0) {
                 Toast.makeText(this, "Key tidak bisa kurang dari 0", Toast.LENGTH_SHORT).show();
-            }else {
-                key = key- 1;
-                edtKey.setText(""+key);
+            } else {
+                key = key - 1;
+                edtKey.setText("" + key);
             }
-        }catch (NumberFormatException nfe){
+        } catch (NumberFormatException nfe) {
             resetKey();
             kurangKey();
         }
