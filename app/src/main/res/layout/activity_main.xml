@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -73,8 +74,8 @@
                     android:id="@+id/inputLay_plain_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="-8dp"
                     android:layout_below="@+id/inputLay_plain"
+                    android:layout_marginLeft="-8dp"
                     android:layout_toRightOf="@id/icon_encrypt">
 
                     <EditText
@@ -151,16 +152,32 @@
 
     </RelativeLayout>
 
-    <ImageButton
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_title"
+        android:layout_centerHorizontal="true"
+        android:elevation="4dp">
+
+    <ImageView
         android:id="@+id/user_profile_photo"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_below="@+id/login_title"
-        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
         android:layout_marginTop="16dp"
-        android:background="@drawable/background_layer"
-        android:elevation="4dp"
-        android:src="@drawable/icon_konversi" />
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/background_layer" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="5dp"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="cari.json"
+            app:lottie_loop="true" />
+    </FrameLayout>
 
     <TextView
         android:id="@+id/login_title"

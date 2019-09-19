@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().hide();
         initView();
 
         edtKey.setText("" + key);
@@ -57,12 +58,9 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
         if (sw.isChecked()) {
-            if(edtPlain.getText().toString().isEmpty()){
-            }
+            edtPlain.setText("");
         }
-
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
