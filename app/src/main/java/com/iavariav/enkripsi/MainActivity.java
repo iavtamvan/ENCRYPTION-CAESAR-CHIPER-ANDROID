@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Switch;
@@ -58,9 +59,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-        if (sw.isChecked()) {
-            edtPlain.setText("");
-        }
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,8 +69,20 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        Switch swOn = (Switch) findViewById(R.id.sw);
+        final EditText edtPlainUpdate = (EditText) findViewById(R.id.edt_plain);
+        final EditText edtEncryptUpdate = (EditText) findViewById(R.id.edt_encrypt);
+        swOn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(sw.isChecked()){
+                    edtPlainUpdate.setText("");
+                }else{
+                    edtEncryptUpdate.setText("");
+                }
+            }
+        });
     }
-
     private void resetKey() {
         key = 0;
         edtKey.setText("" + key);
