@@ -69,16 +69,15 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-        Switch swOn = (Switch) findViewById(R.id.sw);
-        final EditText edtPlainUpdate = (EditText) findViewById(R.id.edt_plain);
-        final EditText edtEncryptUpdate = (EditText) findViewById(R.id.edt_encrypt);
-        swOn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        sw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if(sw.isChecked()){
-                    edtPlainUpdate.setText("");
+                    edtPlain.setText("");
+                    sw.setText("Decrypt");
                 }else{
-                    edtEncryptUpdate.setText("");
+                    edtEncrypt.setText("");
+                    sw.setText("Encrypt");
                 }
             }
         });
