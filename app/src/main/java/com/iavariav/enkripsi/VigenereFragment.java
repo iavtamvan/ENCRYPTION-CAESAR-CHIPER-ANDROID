@@ -123,11 +123,12 @@ public class VigenereFragment extends Fragment {
 
             if (Character.isAlphabetic(orig)) {
                 if (Character.isUpperCase(orig)) {
-                    sb.append((char) ((upper + keyphrase.charAt(j) - 130) % 26 + 65));
+                    sb.append((char) ((upper + keyphrase.charAt(j) - 26) % 26 + 65));
                     ++j;
                     j %= keyphrase.length();
                 } else {
-                    sb.append(Character.toLowerCase((char) ((upper + keyphrase.charAt(j) - 130) % 26 + 65)));
+                    sb.append(Character.toLowerCase((char)
+                            ((upper + keyphrase.charAt(j) - 26) % 26 + 65)));
                     ++j;
                     j %= keyphrase.length();
                 }
