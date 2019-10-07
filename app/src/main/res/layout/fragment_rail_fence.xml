@@ -84,6 +84,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginBottom="10dp"
+                        android:textColor="#000000"
                         android:hint="Encrypt"
                         android:textSize="12sp" />
 
@@ -138,17 +139,39 @@
                     android:layout_marginLeft="10dp"
                     android:text="Encrypt" />
 
-                <Button
-                    android:id="@+id/btn_submit"
-                    android:layout_width="fill_parent"
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/sw"
-                    android:layout_margin="22dp"
-                    android:background="#d67601"
-                    android:text="KONVERSI"
-                    android:textAllCaps="false"
-                    android:textColor="#fff"
-                    android:textSize="18sp" />
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_submit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#d67601"
+                        android:layout_weight="1"
+                        android:text="KONVERSI"
+                        android:layout_margin="10dp"
+                        android:textAllCaps="false"
+                        android:textColor="#fff"
+                        android:textSize="18sp" />
+
+                    <Button
+                        android:id="@+id/resetButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#d67601"
+                        android:layout_weight="1"
+                        android:layout_margin="10dp"
+                        android:text="RESET"
+                        android:textAllCaps="false"
+                        android:textColor="#fff"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
             </RelativeLayout>
         </LinearLayout>
 
