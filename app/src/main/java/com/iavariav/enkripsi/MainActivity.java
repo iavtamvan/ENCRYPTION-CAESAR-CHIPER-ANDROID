@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
                 getSupportFragmentManager(), FragmentPagerItems.with(this)
                 .add("Caesar Chiper", CasarChiperFragment.class)
                 .add("Vigenere", VigenereFragment.class)
+                .add("Rail Fence", RailFenceFragment.class)
                 .create());
 
         ViewPager viewPager = findViewById(R.id.viewpager);
