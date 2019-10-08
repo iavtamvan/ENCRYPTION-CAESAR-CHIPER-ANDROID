@@ -1,19 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical"
     tools:context=".fragment.HomeFragment">
 
     <com.airbnb.lottie.LottieAnimationView
         android:layout_width="290dp"
         android:layout_height="290dp"
         android:layout_gravity="center"
-        android:layout_marginTop="15dp"
         android:layout_marginBottom="5dp"
         app:lottie_autoPlay="true"
         app:lottie_fileName="typing.json"
         app:lottie_loop="true" />
+    <TextView
+        android:id="@+id/marqueeText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="20dp"
+        android:ellipsize="marquee"
+        android:focusable="auto"
+        android:focusableInTouchMode="true"
+        android:gravity="center"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="Aplikasi Penyandian Kriptografi Subtitusi dan Kryptografi Transposis,Ayo Jelajahi dan Belajar Menggunakan Aplikasi Ini!!"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        tools:ignore="HardcodedText" />
 
-</FrameLayout>
+</LinearLayout>
