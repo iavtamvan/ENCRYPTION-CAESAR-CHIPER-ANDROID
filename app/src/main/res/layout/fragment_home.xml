@@ -3,12 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Kasih Animasi Lottie Hud" />
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="290dp"
+        android:layout_height="290dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="5dp"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="typing.json"
+        app:lottie_loop="true" />
 
 </FrameLayout>
