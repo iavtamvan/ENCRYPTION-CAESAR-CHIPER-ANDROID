@@ -1,4 +1,4 @@
-package com.iavariav.enkripsi;
+package com.iavariav.enkripsi.fragment;
 
 
 import android.os.Bundle;
@@ -15,6 +15,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.Toast;
+
+import com.iavariav.enkripsi.R;
 
 
 /**

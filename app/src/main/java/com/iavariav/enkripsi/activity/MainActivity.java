@@ -1,10 +1,14 @@
-package com.iavariav.enkripsi;
+package com.iavariav.enkripsi.activity;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import com.iavariav.enkripsi.R;
+import com.iavariav.enkripsi.fragment.CasarChiperFragment;
+import com.iavariav.enkripsi.fragment.RailFenceFragment;
+import com.iavariav.enkripsi.fragment.VigenereFragment;
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;

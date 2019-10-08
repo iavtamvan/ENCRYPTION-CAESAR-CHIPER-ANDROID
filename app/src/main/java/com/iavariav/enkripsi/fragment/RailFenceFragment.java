@@ -1,4 +1,4 @@
-package com.iavariav.enkripsi;
+package com.iavariav.enkripsi.fragment;
 
 
 import android.os.Bundle;
@@ -17,6 +17,7 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.textfield.TextInputLayout;
+import com.iavariav.enkripsi.R;
 
 
 /**
@@ -41,8 +42,6 @@ public class RailFenceFragment extends Fragment {
     private TextView loginTitle;
     private Button resetButton;
 
-    private RailFenceBasic railFenceBasic;
-
     private int key = 1;
 
     public RailFenceFragment() {
@@ -56,9 +55,6 @@ public class RailFenceFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_rail_fence, container, false);
         initView(view);
-
-        railFenceBasic = new RailFenceBasic();
-
         edtKey.setText("" + key);
         edtEncrypt.setEnabled(false);
         iconPlus.setOnClickListener(new View.OnClickListener() {

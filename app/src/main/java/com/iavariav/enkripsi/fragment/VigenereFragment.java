@@ -1,4 +1,4 @@
-package com.iavariav.enkripsi;
+package com.iavariav.enkripsi.fragment;
 
 
 import android.annotation.SuppressLint;
@@ -15,6 +15,8 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Switch;
+
+import com.iavariav.enkripsi.R;
 
 
 /**

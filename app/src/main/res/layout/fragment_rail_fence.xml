@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#4A9586"
     android:scrollbarAlwaysDrawVerticalTrack="true"
-    tools:context=".RailFenceFragment">
+    tools:context=".fragment.RailFenceFragment">
 
 
     <RelativeLayout
